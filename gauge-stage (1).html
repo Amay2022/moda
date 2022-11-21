@@ -28,7 +28,7 @@
 
   <script type="text/javascript">
     var dom = document.getElementById('container');
-    var myChart = echarts.init(dom, null, {
+    var myChart = echarts.init(dom, 'dark', {
       renderer: 'canvas',
       useDirtyRect: false
     });
@@ -42,11 +42,11 @@
       type: 'gauge',
       axisLine: {
         lineStyle: {
-          width: 30,
+          width: 20,
           color: [
-            [0.3, '#67e0e3'],
-            [0.7, '#37a2da'],
-            [1, '#fd666d']
+            [0.7, '#fd666d'],
+            [0.9, '#37a2da'],
+            [1, '#67e0e3']
           ]
         }
       },
@@ -56,7 +56,7 @@
         }
       },
       axisTick: {
-        distance: -30,
+        distance: -20,
         length: 8,
         lineStyle: {
           color: '#fff',
@@ -64,7 +64,7 @@
         }
       },
       splitLine: {
-        distance: -30,
+        distance: -20,
         length: 30,
         lineStyle: {
           color: '#fff',
@@ -73,17 +73,17 @@
       },
       axisLabel: {
         color: 'auto',
-        distance: -20,
-        fontSize: 15
+        distance:40,
+        fontSize:10
       },
       detail: {
         valueAnimation: true,
-        formatter: '{value} %',
+        formatter: '{value}%',
         color: 'auto'
       },
       data: [
         {
-          value: 68
+          value: 75
         }
       ]
     }
@@ -95,13 +95,13 @@ setInterval(function () {
       {
         data: [
           {
-            value: +(0.68 * 100).toFixed(1)
+            value: +(Math.random() * 100).toFixed(2)
           }
         ]
       }
     ]
   });
-}, 3000);
+}, 2000);
 
     if (option && typeof option === 'object') {
       myChart.setOption(option);
